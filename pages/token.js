@@ -43,7 +43,7 @@ export default function TokenGenerator() {
           }}
         >
           <a style={{ color: "blue", textDecoration: "underline" }}>
-            token generals
+            Play To Earn
           </a>
         </Link>
       </p>

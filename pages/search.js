@@ -37,7 +37,7 @@ export default function Search() {
     <div class="td" id="s-cover">
     <Link
           href={{
-            pathname: "/test",
+            pathname: "/playtoearn",
             query: data, // the data
           }}
         >

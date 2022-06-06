@@ -48,7 +48,7 @@ export default function TokenGenerator() {
           }}
         >
           <a style={{ color: "blue", textDecoration: "underline" }}>
-            token generals
+            Estimated Inflation
           </a>
         </Link>
       </p>
@@ -65,7 +65,6 @@ export default function TokenGenerator() {
       </p>
         <h2>P2E Balance</h2>
           <Distribution /> 
-
         </>
 
     );
