@@ -90,6 +90,8 @@ export default function Balance() {
     <div style={{ padding: 40 }}>
       <div>
         <h3>{name}</h3>
+
+        <p>Wallet balances</p>
           {
               check?.map((balance) => {
                   return (
@@ -98,9 +100,11 @@ export default function Balance() {
               })
           }
 
-          {/* sum of all balances */}
+        <p>Sum of balances</p>
           <li>{sum * 1e-18}</li>
         
+
+          <p>Addresses</p>
         {
             secheck?.flat().map((balance) => {
                   return (

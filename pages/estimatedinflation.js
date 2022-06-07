@@ -72,23 +72,23 @@ export default function TokenGenerator() {
           <Balance /> */}
         {/* <h2>Transaction</h2>
           <Transaction /> */}
-        <h2>Supply</h2>
+        <p>Supply</p>
           <Supply />
         {/* <h2>Holder</h2>
           <Holder /> */}
-        <h2>Circulating</h2>
+        <p>Circulating</p>
           <Circulating />
-        <h2>Unreleased Liqu</h2>
+        <p>Unreleased Liqu</p>
           <Uliqu />
-        <h2>Team Tokens</h2>
+        <p>Team Tokens</p>
           <Initialtokens />
-        <h2>Marketcap</h2>
+        <p>Marketcap</p>
           <Marketcap />
-        <h2>Month</h2>
+        <p>Month</p>
           <Month />
-        <h2>New Supply</h2>
+        <p>New Supply</p>
           <NewSupply />
-        <h2>Inflation %</h2>
+        <p>Inflation %</p>
           <Percent />
         </>
 

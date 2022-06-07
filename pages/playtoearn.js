@@ -65,6 +65,10 @@ export default function TokenGenerator() {
       </p>
         <h2>P2E Balance</h2>
           <Distribution /> 
+        
+
+
+
         </>
 
     );

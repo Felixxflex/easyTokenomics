@@ -8,6 +8,9 @@ export default function Distribution() {
 
 
   const [check, setCheck] = useState(null);
+  const [checksec, setChecksec] = useState(null);
+  const [checktre, setChecktre] = useState(null);
+
 
   const router = useRouter();
   const query = router.query;
@@ -25,6 +28,11 @@ export default function Distribution() {
       
       let tokenresult = tokensame.map(function(element){
         let wlunarush = element.distribution;
+        return wlunarush;
+      })
+
+      let total = tokensame.map(function(element){
+        let wlunarush = element.distributiontotal;
         return wlunarush;
       })
         
@@ -52,7 +60,8 @@ export default function Distribution() {
         console.log('Error: ', err.message);
       }
 
-        
+        setChecksec(tokenresult)
+        setChecktre(total)
       }
       testholder();
     }, []);
@@ -80,6 +89,7 @@ export default function Distribution() {
   return (
     <div style={{ padding: 40 }}>
       <div>
+          <p>Rewards wallets with balance</p>
           {
               check?.map((wallet) => {
                   return (
@@ -88,9 +98,20 @@ export default function Distribution() {
               })
           }
 
+        <p>Rewards remaining</p>
         <li>{sum * 1e-18}</li>
 
+        {checksec?.map((address) => {
+          return (
+            <li>{address}</li>
+          )
+        })}
 
+        <li>{checktre}</li>
+
+        <p>Rewards spend</p>
+
+        <li>{checktre - (sum * 1e-18)}</li>
       </div>
 
     </div>
