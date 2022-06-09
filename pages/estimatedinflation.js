@@ -45,7 +45,7 @@ export default function TokenGenerator() {
           </a>
         </Link>
       </p>
-      <p>
+      {/* <p>
         <Link
           href={{
             pathname: "/playtoearn",
@@ -56,7 +56,7 @@ export default function TokenGenerator() {
             Play To Earn
           </a>
         </Link>
-      </p>
+      </p> */}
       <p>
         <Link
           href={{
@@ -68,8 +68,8 @@ export default function TokenGenerator() {
           </a>
         </Link>
       </p>
-        {/* <h2>Balance</h2>
-          <Balance /> */}
+        <h2>Balance</h2>
+          <Balance />
         {/* <h2>Transaction</h2>
           <Transaction /> */}
         <p>Supply</p>
