@@ -32,4 +32,5 @@ model Token {
   m13 String[] @db.VarChar(255)
   m14 String[] @db.VarChar(255)
   m15 String[] @db.VarChar(255)
+  tge String[] @db.VarChar(255)
 }
