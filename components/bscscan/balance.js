@@ -26,6 +26,7 @@ export default function Balance() {
         return (element.tokenName == name);
       })
       // console.log(tokensame)
+
       
       let tokenresult = tokensame.map(function(element){
         let wlunarush = element.whitelistWallets;

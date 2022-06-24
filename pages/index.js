@@ -15,7 +15,7 @@ export default function Search() {
 
 <div className="searchh1">
   <h3>
-    Tokenomics analysis of more than 1000 Tokens
+    Tokenomics analysis of more than 1000 Crypto Projects
   </h3>
 </div>
 
@@ -37,7 +37,7 @@ export default function Search() {
     <div class="td" id="s-cover">
     <Link
           href={{
-            pathname: "/playtoearn",
+            pathname: "/prismasearchtest",
             query: data, // the data
           }}
         >
