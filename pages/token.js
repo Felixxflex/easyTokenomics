@@ -11,6 +11,7 @@ import Marketcap from "../components/coingecko/marketcap";
 import { useRouter } from "next/router";
 
 
+
 export default function TokenGenerator() {
 
 
@@ -59,22 +60,23 @@ export default function TokenGenerator() {
         </Link>
         </p>
 
-        <h2>Balance</h2>
-          <Balance />
+        {/* <h2>Balance</h2>
+          <Balance /> */}
         {/* <h2>Transaction</h2>
           <Transaction /> */}
-        <h2>Supply</h2>
-          <Supply />
+        {/* <h2>Supply</h2>
+          <Supply /> */}
         {/* <h2>Holder</h2>
           <Holder /> */}
-        <h2>Circulating</h2>
+        {/* <h2>Circulating</h2>
           <Circulating />
         <h2>Unreleased Liqu</h2>
           <Uliqu />
         <h2>Team Tokens</h2>
           <Initialtokens />
         <h2>Marketcap</h2>
-          <Marketcap />
+          <Marketcap /> */}
+
 
         </>
 

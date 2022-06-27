@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 import { useContext } from 'react';
 // import Prisma from '/prisma';
 import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient();
 
 
-export default function Kek(props) {
+
+export default function Test(props) {
     
       const router = useRouter();
       const query = router.query;
@@ -55,9 +55,10 @@ export default function Kek(props) {
 
 
 export async function getServerSideProps() {
+    const prisma = new PrismaClient();
     
     const findtokens = await prisma.easytokens.findMany({})
-    // console.log(findtokens)
+    console.log(findtokens)
 
 
     return {
@@ -66,4 +67,3 @@ export async function getServerSideProps() {
         }
     }
 }
-

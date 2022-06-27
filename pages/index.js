@@ -37,7 +37,7 @@ export default function Search() {
     <div class="td" id="s-cover">
     <Link
           href={{
-            pathname: "/prismasearchtest",
+            pathname: "/token",
             query: data, // the data
           }}
         >

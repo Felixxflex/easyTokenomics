@@ -1,13 +1,14 @@
 import Head from 'next/head'
-import { bsctokendata } from "../../pages/bscdatanew/data";
+// import { bsctokendata } from "../../pages/bscdatanew/data";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useContext } from 'react';
+import { PrismaClient } from '@prisma/client'
 
 
 
 
-export default function Balance() {
+export default function Balance(props) {
 
   // const value = useContext(Context);
   const [check, setCheck] = useState(null);
@@ -17,12 +18,16 @@ export default function Balance() {
   const router = useRouter();
   const query = router.query;
   const name = query.name;
+
+  // const data  =  props.tokens;
+  // console.log(data)
+
   
   
   useEffect(() => {
       let testbalance = async() => {
 
-      let tokensame = bsctokendata.filter(function(element) {
+      let tokensame = data.filter(function(element) {
         return (element.tokenName == name);
       })
       // console.log(tokensame)
@@ -46,7 +51,7 @@ export default function Balance() {
         // }, 2000*index )
       })
         
-      console.log(balance)
+      // console.log(balance)
       
       
       const addressbalance = await Promise.all(balance.map(u => fetch(u)))
@@ -79,7 +84,7 @@ export default function Balance() {
     return Number(str);
   });
 
-    console.log(balanceresult)
+    // console.log(balanceresult)
 
   const sum = arrOfNum?.reduce(function(sum, number) {
     const updatedSum = sum + number;
@@ -126,3 +131,18 @@ export default function Balance() {
     </div>
   );
 }
+
+
+// export async function getServerSideProps() {
+//   const prisma = new PrismaClient();
+    
+//   const findtokens = await prisma.easytokens.findMany({})
+//   console.log(findtokens)
+
+
+//   return {
+//       props: {
+//           tokens: findtokens,
+//       }
+//   }
+// }
