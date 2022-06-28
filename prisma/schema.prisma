@@ -60,4 +60,5 @@ model easytokens {
   m15 String[] @db.VarChar(255)
   tge String[] @db.VarChar(255)
   abbrev String @db.VarChar(255)
+  initialteamtokens String[] @db.VarChar(255)
 }
