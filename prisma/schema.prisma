@@ -11,30 +11,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Token {
-  id Int @id @default(autoincrement()) 
-  tokenName String @db.VarChar(255)
-  whitelistWallets String[] @db.VarChar(255)
-  tokenAddress String @db.VarChar(255)
-  coingecko String @db.VarChar(255)
-  month String[] @db.VarChar(255)
-  m1 String[] @db.VarChar(255)
-  m2 String[] @db.VarChar(255)
-  m3 String[] @db.VarChar(255)
-  m4 String[] @db.VarChar(255)
-  m5 String[] @db.VarChar(255)
-  m6 String[] @db.VarChar(255)
-  m7 String[] @db.VarChar(255)
-  m8 String[] @db.VarChar(255)
-  m9 String[] @db.VarChar(255)
-  m10 String[] @db.VarChar(255)
-  m11 String[] @db.VarChar(255)
-  m12 String[] @db.VarChar(255)
-  m13 String[] @db.VarChar(255)
-  m14 String[] @db.VarChar(255)
-  m15 String[] @db.VarChar(255)
-  tge String[] @db.VarChar(255)
-}
+
 
 model easytokens {
   id Int @id @default(autoincrement()) 
@@ -43,22 +20,21 @@ model easytokens {
   tokenAddress String @db.VarChar(255)
   coingecko String @db.VarChar(255)
   month String[] @db.VarChar(255)
-  m1 String[] @db.VarChar(255)
-  m2 String[] @db.VarChar(255)
-  m3 String[] @db.VarChar(255)
-  m4 String[] @db.VarChar(255)
-  m5 String[] @db.VarChar(255)
-  m6 String[] @db.VarChar(255)
-  m7 String[] @db.VarChar(255)
-  m8 String[] @db.VarChar(255)
-  m9 String[] @db.VarChar(255)
-  m10 String[] @db.VarChar(255)
-  m11 String[] @db.VarChar(255)
-  m12 String[] @db.VarChar(255)
-  m13 String[] @db.VarChar(255)
-  m14 String[] @db.VarChar(255)
-  m15 String[] @db.VarChar(255)
-  tge String[] @db.VarChar(255)
   abbrev String @db.VarChar(255)
-  initialteamtokens String[] @db.VarChar(255)
+  tge Int[] @db.Integer
+  m1 Int[] @db.Integer
+  m2 Int[] @db.Integer
+  m3 Int[] @db.Integer
+  m4 Int[] @db.Integer
+  m5 Int[] @db.Integer
+  m6 Int[] @db.Integer
+  m7 Int[] @db.Integer
+  m8 Int[] @db.Integer
+  m9 Int[] @db.Integer
+  m10 Int[] @db.Integer
+  m11 Int[] @db.Integer
+  m12 Int[] @db.Integer
+  m13 Int[] @db.Integer
+  m14 Int[] @db.Integer
+  m15 Int[] @db.Integer
 }
