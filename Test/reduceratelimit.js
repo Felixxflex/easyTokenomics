@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { bsctokendata } from "./bscdatanew/data";
+import { bsctokendata } from "../pages/bscdatanew/data";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useContext } from 'react';
