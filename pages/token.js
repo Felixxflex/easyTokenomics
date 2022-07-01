@@ -460,6 +460,8 @@ const [verifiedteamcheck, setVerifiedteamcheck] = useState(null);
 
 <h3>{verifiedblockcheck}</h3>
 
+{/*Initial Verified Team function (static data)*/}
+
 <h2>verified Team</h2>
 
 <h3>{verifiedteamcheck}</h3>
