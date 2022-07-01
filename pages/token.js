@@ -29,13 +29,19 @@ const [unreliqcheck, setUnreliqheck] = useState(null);
 const [mcapcheck, setMcapheck] = useState(null);
 
 //Store data from InitialTeamTokens function
-const [initialcheck, setInitialheck] = useState(null);
+const [initialcheck, setInitialCheck] = useState(null);
 
-    
-  
+//Store data from verified Blockchain function
+const [verifiedblockcheck, setVerifiedblockcheck] = useState(null);
+
+//Store data from verified Blockchain function
+const [verifiedteamcheck, setVerifiedteamcheck] = useState(null);
+
+
+
   
     const data  =  props.tokens;
-    console.log(data)
+    // console.log(data)
   
     
     //balance function with useEffect integration
@@ -97,13 +103,13 @@ const [initialcheck, setInitialheck] = useState(null);
       let tokensame = data.filter(function(element) {
         return (element.tokenName == name);
       })
-      console.log(tokensame)
+      // console.log(tokensame)
   
       let addressaccess = tokensame.map((access) => {
           let tokenaddress = access.tokenAddress
           return tokenaddress
       })
-      console.log(addressaccess)
+      // console.log(addressaccess)
   
       let contractmap = await addressaccess.map((contract) => {
           let address = 'https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=' + contract + '&apikey=E2JAJX6MAGAZUHSYIBZIEMKMNW9NZKPR7I'
@@ -137,7 +143,7 @@ const [initialcheck, setInitialheck] = useState(null);
       const result = await coinGeckoClient.coins.markets({
         ids: tokenresult,
       });
-      console.log(result)
+      // console.log(result)
 
 
         
@@ -165,7 +171,7 @@ const [initialcheck, setInitialheck] = useState(null);
       const result = await coinGeckoClient.coins.markets({
         ids: tokenresult,
       });
-      console.log(result)
+      // console.log(result)
 
 
         
@@ -219,11 +225,79 @@ const [initialcheck, setInitialheck] = useState(null);
 
   
   
-          setInitialheck(addressaccess)
+          setInitialCheck(addressaccess)
   
         }
         testinitial();
       }, []);
+
+
+    //Initial verified Blockchain function with useffect function
+
+
+      useEffect(() => {
+        let testverified = async() => {
+    
+            let tokensame = data.filter(function(element) {
+              return (element.tokenName == name);
+            })
+      
+            let addressaccess = tokensame.map((access) => {
+                let tokenaddress = access.verifiedblock
+                const verifiecation = tokenaddress == true ? "Audited" : "Not Audited";
+                return verifiecation
+            })
+
+
+
+            console.log(addressaccess)
+          
+
+
+          
+
+
+    
+            setVerifiedblockcheck(addressaccess)
+    
+          }
+          testverified();
+        }, []);
+        
+
+        //Initial verified Team function with useffect function
+
+    
+      useEffect(() => {
+        let testverifiedteam = async() => {
+    
+            let tokensame = data.filter(function(element) {
+              return (element.tokenName == name);
+            })
+      
+            let addressaccess = tokensame.map((access) => {
+                let tokenaddress = access.verifiedteam
+                const verifiecation = tokenaddress == true ? "Verified" : "Not Verified";
+                return verifiecation
+            })
+
+
+
+            console.log(addressaccess)
+          
+
+
+          
+
+
+    
+            setVerifiedteamcheck(addressaccess)
+    
+          }
+          testverifiedteam();
+        }, []);
+
+
 
 
 
@@ -380,6 +454,15 @@ const [initialcheck, setInitialheck] = useState(null);
     )
     })}
 
+{/*Initial Verified Blockchain function (static data)*/}
+
+<h2>verified blockchain</h2>
+
+<h3>{verifiedblockcheck}</h3>
+
+<h2>verified Team</h2>
+
+<h3>{verifiedteamcheck}</h3>
 
         </>
 
@@ -392,7 +475,7 @@ const [initialcheck, setInitialheck] = useState(null);
     const prisma = new PrismaClient();
     
     const findtokens = await prisma.easytokens.findMany({})
-    console.log(findtokens)
+    // console.log(findtokens)
 
 
     return {

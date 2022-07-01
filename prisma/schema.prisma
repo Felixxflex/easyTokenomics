@@ -25,16 +25,6 @@ model easytokens {
   websitelink String @db.VarChar(255)
   verifiedblock Boolean @default(false) 
   verifiedteam Boolean @default(false)
-  vestingone DateTime @db.Date
-  vestingtwo DateTime @db.Date
-  vestingthree DateTime @db.Date
-  vestingfour DateTime @db.Date
-  vestingfive DateTime @db.Date
-  vestingsix DateTime @db.Date
-  vestingseven DateTime @db.Date
-  vestingeight DateTime @db.Date
-  vestingnine DateTime @db.Date
-  vestingten DateTime @db.Date
   tge Int[] @db.Integer
   m1 Int[] @db.Integer
   m2 Int[] @db.Integer
