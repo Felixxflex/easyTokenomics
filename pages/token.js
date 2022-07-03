@@ -20,13 +20,9 @@ const [secheck, setSecheck] = useState(null);
 const [supplycheck, setSupplycheck] = useState(null);
 
 //Store data from circulating supply function
-const [circulatingcheck, setCirculatingcheck] = useState(null);
-
 //Store data from unreleased liq function
-const [unreliqcheck, setUnreliqheck] = useState(null);
-
 //Store data from Marketcap function
-const [mcapcheck, setMcapheck] = useState(null);
+const [coingecko, setCoingecko] = useState(null);
 
 //Store data from InitialTeamTokens function
 const [initialcheck, setInitialCheck] = useState(null);
@@ -37,6 +33,11 @@ const [verifiedblockcheck, setVerifiedblockcheck] = useState(null);
 //Store data from verified Blockchain function
 const [verifiedteamcheck, setVerifiedteamcheck] = useState(null);
 
+//Store data from project description function
+const [descriptioncheck, setDescription] = useState(null);
+
+//Store data from project description function
+const [websitecheck, setWebsite] = useState(null);
 
 
   
@@ -127,6 +128,8 @@ const [verifiedteamcheck, setVerifiedteamcheck] = useState(null);
       
 
     //Circulating function with useffect function
+    //Unreleased Liquidity function with useffect function
+    //Market Cap function with useffect function
     useEffect(() => {
       let testcirculating = async() => {
 
@@ -147,64 +150,9 @@ const [verifiedteamcheck, setVerifiedteamcheck] = useState(null);
 
 
         
-      setCirculatingcheck(result)
+      setCoingecko(result)
       }
       testcirculating();
-    }, []);
-
-
-    
-    //Unreleased Liquidity function with useffect function
-    useEffect(() => {
-      let testunreliq = async() => {
-
-      let tokensame = data.filter(function(element) {
-        return (element.tokenName == name);
-      })
-      // console.log(tokensame)
-      
-      let tokenresult = tokensame.map(function(element){
-        let wlunarush = element.coingecko;
-        return wlunarush;
-      })
-
-      const result = await coinGeckoClient.coins.markets({
-        ids: tokenresult,
-      });
-      // console.log(result)
-
-
-        
-      setUnreliqheck(result)
-      }
-      testunreliq();
-    }, []);
-
-
-    //Market Cap function with useffect function
-
-    useEffect(() => {
-      let testmcap = async() => {
-
-      let tokensame = data.filter(function(element) {
-        return (element.tokenName == name);
-      })
-      // console.log(tokensame)
-      
-      let tokenresult = tokensame.map(function(element){
-        let wlunarush = element.coingecko;
-        return wlunarush;
-      })
-
-      const result = await coinGeckoClient.coins.markets({
-        ids: tokenresult,
-      });
-
-
-        
-      setMcapheck(result)
-      }
-      testmcap();
     }, []);
 
 
@@ -279,22 +227,58 @@ const [verifiedteamcheck, setVerifiedteamcheck] = useState(null);
                 let tokenaddress = access.verifiedteam
                 const verifiecation = tokenaddress == true ? "Verified" : "Not Verified";
                 return verifiecation
-            })
+            })          
 
-
-
-            console.log(addressaccess)
-          
-
-
-          
-
-
-    
             setVerifiedteamcheck(addressaccess)
     
           }
           testverifiedteam();
+        }, []);
+
+
+
+      //Initial project description function with useffect function
+
+    
+      useEffect(() => {
+        let testprojectdesc = async() => {
+    
+            let tokensame = data.filter(function(element) {
+              return (element.tokenName == name);
+            })
+      
+            let addressaccess = tokensame.map((access) => {
+                let tokenaddress = access.projectdesc
+                return tokenaddress
+            })          
+
+            setDescription(addressaccess)
+    
+          }
+          testprojectdesc();
+        }, []);
+
+
+
+      //Initial Website Link function with useffect function
+
+    
+      useEffect(() => {
+        let testwebsitelink = async() => {
+    
+            let tokensame = data.filter(function(element) {
+              return (element.tokenName == name);
+            })
+      
+            let addressaccess = tokensame.map((access) => {
+                let tokenaddress = access.websitelink
+                return tokenaddress
+            })          
+
+            setWebsite(addressaccess)
+    
+          }
+          testwebsitelink();
         }, []);
 
 
@@ -412,7 +396,7 @@ const [verifiedteamcheck, setVerifiedteamcheck] = useState(null);
 
     {/*Supply function (coingecko api)*/}
 
-{circulatingcheck?.data.map(coin => (
+{coingecko?.data.map(coin => (
           <tr key={coin.id}>
             <th scope="row">
             <p>Circulating Supply</p>
@@ -424,7 +408,7 @@ const [verifiedteamcheck, setVerifiedteamcheck] = useState(null);
 
  {/*Unreleased Liquidity function (coingecko api)*/}
 
-{unreliqcheck?.data.map(coin => (
+{coingecko?.data.map(coin => (
           <tr key={coin.id}>
             <th scope="row">
             <p>Unreleased Supply</p>
@@ -435,7 +419,7 @@ const [verifiedteamcheck, setVerifiedteamcheck] = useState(null);
 
  {/*Market Cap function (coingecko api)*/}
 
-{mcapcheck?.data.map(coin => (
+{coingecko?.data.map(coin => (
           <tr key={coin.id}>
             <th scope="row">
             <p>Marketcap</p>
@@ -465,6 +449,18 @@ const [verifiedteamcheck, setVerifiedteamcheck] = useState(null);
 <h2>verified Team</h2>
 
 <h3>{verifiedteamcheck}</h3>
+
+{/*Initial Project Description function (static data)*/}
+
+<h2>Project Description</h2>
+
+<h3>{descriptioncheck}</h3>
+
+{/*Initial Website Link function (static data)*/}
+
+<h2>Website Link</h2>
+
+<h3>{websitecheck}</h3>
 
         </>
 
