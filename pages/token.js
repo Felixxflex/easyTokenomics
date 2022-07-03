@@ -50,7 +50,7 @@ const [websitecheck, setWebsite] = useState(null);
         let testbalance = async() => {
   
         let tokensame = data.filter(function(element) {
-          return (element.tokenName == name);
+          return (element.tokenName == name || element.tokenAddress == name);
         })
         // console.log(tokensame)
   
@@ -102,7 +102,7 @@ const [websitecheck, setWebsite] = useState(null);
       let testsupply = async() => {
   
       let tokensame = data.filter(function(element) {
-        return (element.tokenName == name);
+        return (element.tokenName == name || element.tokenAddress == name);
       })
       // console.log(tokensame)
   
@@ -134,7 +134,7 @@ const [websitecheck, setWebsite] = useState(null);
       let testcirculating = async() => {
 
       let tokensame = data.filter(function(element) {
-        return (element.tokenName == name);
+        return (element.tokenName == name || element.tokenAddress == name);
       })
       // console.log(tokensame)
       
@@ -162,7 +162,7 @@ const [websitecheck, setWebsite] = useState(null);
       let testinitial = async() => {
   
           let tokensame = data.filter(function(element) {
-            return (element.tokenName == name);
+            return (element.tokenName == name || element.tokenAddress == name);
           })
     
           let addressaccess = tokensame.map((access) => {
@@ -187,7 +187,7 @@ const [websitecheck, setWebsite] = useState(null);
         let testverified = async() => {
     
             let tokensame = data.filter(function(element) {
-              return (element.tokenName == name);
+              return (element.tokenName == name || element.tokenAddress == name);
             })
       
             let addressaccess = tokensame.map((access) => {
@@ -220,7 +220,7 @@ const [websitecheck, setWebsite] = useState(null);
         let testverifiedteam = async() => {
     
             let tokensame = data.filter(function(element) {
-              return (element.tokenName == name);
+              return (element.tokenName == name || element.tokenAddress == name);
             })
       
             let addressaccess = tokensame.map((access) => {
@@ -244,7 +244,7 @@ const [websitecheck, setWebsite] = useState(null);
         let testprojectdesc = async() => {
     
             let tokensame = data.filter(function(element) {
-              return (element.tokenName == name);
+              return (element.tokenName == name || element.tokenAddress == name);
             })
       
             let addressaccess = tokensame.map((access) => {
@@ -267,7 +267,7 @@ const [websitecheck, setWebsite] = useState(null);
         let testwebsitelink = async() => {
     
             let tokensame = data.filter(function(element) {
-              return (element.tokenName == name);
+              return (element.tokenName == name || element.tokenAddress == name);
             })
       
             let addressaccess = tokensame.map((access) => {
