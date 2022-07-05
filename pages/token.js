@@ -52,10 +52,27 @@ const [date8, setDate8] = useState(null);
 const [date9, setDate9] = useState(null);
 const [date10, setDate10] = useState(null);
 
+//Store categories from vesting schedule function
+const [reserve, setReserve] = useState(null);
+const [playtoearn, setPlaytoearn] = useState(null);
+const [privatesale, setPrivatesale] = useState(null);
+const [partnership, setPartnership] = useState(null);
+const [publicsale, setPublicsale] = useState(null);
+const [teamandadvisor, setTeamandadvisors] = useState(null);
+const [liquidity, setLiquidity] = useState(null);
+const [marketing, setMarketing] = useState(null);
+
+//Store categories from vesting schedule function
+const [supply1, setSupply1] = useState(null);
+const [supply2, setSupply2] = useState(null);
+const [supply3, setSupply3] = useState(null);
+const [supply4, setSupply4] = useState(null);
+const [supply5, setSupply5] = useState(null);
+const [supply6, setSupply6] = useState(null);
+
 
   
     const data  =  props.tokens;
-    // console.log(data)
   
     
     //balance function with useEffect integration
@@ -64,9 +81,7 @@ const [date10, setDate10] = useState(null);
   
         let tokensame = data.filter(function(element) {
           return (element.tokenName == name || element.tokenAddress == name);
-        })
-        // console.log(tokensame)
-  
+        })  
         
         let tokenresult = tokensame.map(function(element){
           let wlunarush = element.whitelistWallets;
@@ -83,10 +98,8 @@ const [date10, setDate10] = useState(null);
             })
           let bscbalance = 'https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=' + tokencontract + '&address=' + element + '&tag=latest&apikey=E2JAJX6MAGAZUHSYIBZIEMKMNW9NZKPR7I'
           return bscbalance;
-          // }, 2000*index )
         })
           
-        // console.log(balance)
         
         
         const addressbalance = await Promise.all(balance.map(u => fetch(u)))
@@ -117,13 +130,11 @@ const [date10, setDate10] = useState(null);
       let tokensame = data.filter(function(element) {
         return (element.tokenName == name || element.tokenAddress == name);
       })
-      // console.log(tokensame)
   
       let addressaccess = tokensame.map((access) => {
           let tokenaddress = access.tokenAddress
           return tokenaddress
       })
-      // console.log(addressaccess)
   
       let contractmap = await addressaccess.map((contract) => {
           let address = 'https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=' + contract + '&apikey=E2JAJX6MAGAZUHSYIBZIEMKMNW9NZKPR7I'
@@ -131,7 +142,6 @@ const [date10, setDate10] = useState(null);
       })
   
     const addresscont = await Promise.all(contractmap.map(u => fetch(u)))
-    // console.log(addresscont)
     const datacont = await Promise.all(addresscont.map(r => r.json()))
     setSupplycheck(datacont)
   
@@ -149,7 +159,6 @@ const [date10, setDate10] = useState(null);
       let tokensame = data.filter(function(element) {
         return (element.tokenName == name || element.tokenAddress == name);
       })
-      // console.log(tokensame)
       
       let tokenresult = tokensame.map(function(element){
         let wlunarush = element.coingecko;
@@ -159,7 +168,6 @@ const [date10, setDate10] = useState(null);
       const result = await coinGeckoClient.coins.markets({
         ids: tokenresult,
       });
-      // console.log(result)
 
 
         
@@ -504,6 +512,165 @@ let vestingdate10 = tokensame.map((access) => {
 
 
 
+      //Initial categories function with useffect function
+
+    
+      useEffect(() => {
+        let testverifiedteam = async() => {
+    
+            let tokensame = data.filter(function(element) {
+              return (element.tokenName == name || element.tokenAddress == name);
+            })
+      
+            let reservecat = tokensame.map((access) => {
+                let tokenaddress = access.reserve
+                const verifiecation = tokenaddress == true ? "Reserve" : " ";
+                return verifiecation
+            })
+            
+            let playtoearncat = tokensame.map((access) => {
+              let tokenaddress = access.playtoearn
+              const verifiecation = tokenaddress == true ? "Play To Earn" : " ";
+              return verifiecation
+          })          
+
+          let privatesalecat = tokensame.map((access) => {
+            let tokenaddress = access.privatesale
+            const verifiecation = tokenaddress == true ? "Private Sale" : " ";
+            return verifiecation
+        })          
+
+        let partnershipcat = tokensame.map((access) => {
+          let tokenaddress = access.partnership
+          const verifiecation = tokenaddress == true ? "Partnership" : " ";
+          return verifiecation
+      })
+
+      let publicsalecat = tokensame.map((access) => {
+        let tokenaddress = access.publicsale
+        const verifiecation = tokenaddress == true ? "Public Sale" : " ";
+        return verifiecation
+    })
+
+      let teamandvisorscat = tokensame.map((access) => {
+        let tokenaddress = access.teamandadvisors
+        const verifiecation = tokenaddress == true ? "Advisors" : " ";
+        return verifiecation
+    })         
+    
+    
+    let liquiditycat = tokensame.map((access) => {
+      let tokenaddress = access.liquidity
+      const verifiecation = tokenaddress == true ? "Liquidity" : " ";
+      return verifiecation
+  })    
+
+    let marketingcat = tokensame.map((access) => {
+      let tokenaddress = access.marketing
+      const verifiecation = tokenaddress == true ? "Marketing" : " ";
+      return verifiecation
+  })      
+
+
+        setReserve(reservecat)
+        setPlaytoearn(playtoearncat)
+        setPrivatesale(privatesalecat)
+        setPartnership(partnershipcat)
+        setPublicsale(publicsalecat)
+        setTeamandadvisors(teamandvisorscat)
+        setLiquidity(liquiditycat)
+        setMarketing(marketingcat)
+
+
+    
+          }
+          testverifiedteam();
+        }, []);
+
+
+
+      //Initial inflation % function with useffect function
+
+
+        useEffect(() => {
+          let testunqu = async() => {
+      
+            let tokensame = data.filter(function(element) {
+              return (element.tokenName == name || element.tokenAddress == name);
+            })
+        
+              let tge = tokensame.map((access) => {
+                  let tokenaddress = access.tge
+                  return tokenaddress
+              })
+      
+              let supplyone = tokensame.map((access) => {
+                  let tokenaddress = access.m1
+                  return tokenaddress
+              })
+              let supplytwo = tokensame.map((access) => {
+                  let tokenaddress = access.m2
+                  return tokenaddress
+              })
+              let supplythree = tokensame.map((access) => {
+                  let tokenaddress = access.m3
+                  return tokenaddress
+              })
+              let supplyfour = tokensame.map((access) => {
+                  let tokenaddress = access.m4
+                  return tokenaddress
+              })
+              let supplyfive = tokensame.map((access) => {
+                  let tokenaddress = access.m5
+                  return tokenaddress
+              })
+              let supplysix = tokensame.map((access) => {
+                  let tokenaddress = access.m6
+                  return tokenaddress
+              })
+              
+
+      
+              // const y = [supplyone =+ supplytwo]
+              let r0 = (100 * supplyone) / tge
+      
+              let arr1 = tge.concat(supplyone)
+              let sum1 = arr1.flat().reduce((a, b) => a + b, 0)
+              let r1 = (100 * supplytwo) / sum1
+      
+              let arr2 = supplytwo.push([sum1])
+              let sum2 = supplytwo.flat().reduce((a, b) => a + b, 0)
+              let r2 = (100 * supplythree) / sum2
+      
+              let arr3 = supplythree.push([sum2])
+              let sum3 = supplythree.flat().reduce((a, b) => a + b, 0)
+              let r3 = (100 * supplyfour) / sum3
+      
+              let arr4 = supplyfour.push([sum3])
+              let sum4 = supplyfour.flat().reduce((a, b) => a + b, 0)
+              let r4 = (100 * supplyfive) / sum4
+      
+              let arr5 = supplyfive.push([sum4])
+              let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
+              let r5 = (100 * supplysix) / sum5
+              
+              setSupply1(r0)
+              setSupply2(r1)
+              setSupply3(r2)
+              setSupply4(r3)
+              setSupply5(r4)
+              setSupply6(r5)
+              
+          }
+          testunqu();
+      }, []);
+      
+      //need to count all the values to divide to do it dynamic
+      const totalinflation = [supply1 + supply2 + supply3 + supply4 + supply5 + supply6] /6
+
+
+
+
 
     //Balance action 
       
@@ -696,6 +863,30 @@ let vestingdate10 = tokensame.map((access) => {
 <h3>{date8}</h3>
 <h3>{date9}</h3>
 <h3>{date10}</h3>
+
+{/*Initial Categories function (static data)*/}
+
+<h2>Categories</h2>
+
+<h3>{reserve}</h3>
+<h3>{playtoearn}</h3>
+<h3>{privatesale}</h3>
+<h3>{partnership}</h3>
+<h3>{publicsale}</h3>
+<h3>{teamandadvisor}</h3>
+<h3>{liquidity}</h3>
+<h3>{marketing}</h3>
+
+
+
+{/*Initial Inflation % function (static data)*/}
+
+<h2>Inflation %</h2>
+
+<h3>{totalinflation}</h3>
+
+
+
 
         </>
 

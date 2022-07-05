@@ -35,6 +35,14 @@ model easytokens {
   vestingeight DateTime @db.Date
   vestingnine DateTime @db.Date
   vestingten DateTime @db.Date
+  reserve Boolean @default(false)
+  playtoearn Boolean @default(false)
+  privatesale Boolean @default(false)
+  partnership Boolean @default(false)
+  publicsale Boolean @default(false)
+  teamandadvisors Boolean @default(false)
+  liquidity Boolean @default(false)
+  marketing Boolean @default(false)
   tge Int[] @db.Integer
   m1 Int[] @db.Integer
   m2 Int[] @db.Integer
