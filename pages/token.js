@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import moment from "moment";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { PrismaClient } from '@prisma/client'
@@ -38,6 +39,18 @@ const [descriptioncheck, setDescription] = useState(null);
 
 //Store data from project description function
 const [websitecheck, setWebsite] = useState(null);
+
+//Store data from vesting schedule function
+const [date, setDate] = useState(null);
+const [date2, setDate2] = useState(null);
+const [date3, setDate3] = useState(null);
+const [date4, setDate4] = useState(null);
+const [date5, setDate5] = useState(null);
+const [date6, setDate6] = useState(null);
+const [date7, setDate7] = useState(null);
+const [date8, setDate8] = useState(null);
+const [date9, setDate9] = useState(null);
+const [date10, setDate10] = useState(null);
 
 
   
@@ -196,16 +209,7 @@ const [websitecheck, setWebsite] = useState(null);
                 return verifiecation
             })
 
-
-
-            console.log(addressaccess)
-          
-
-
-          
-
-
-    
+ 
             setVerifiedblockcheck(addressaccess)
     
           }
@@ -279,6 +283,222 @@ const [websitecheck, setWebsite] = useState(null);
     
           }
           testwebsitelink();
+        }, []);
+
+
+
+      //Initial vesting schedule function with useffect function
+
+    
+      useEffect(() => {
+        let testprojectdesc = async() => {
+    
+            let tokensame = data.filter(function(element) {
+              return (element.tokenName == name || element.tokenAddress == name);
+            })
+      
+            let vesting1 = tokensame.map((access) => {
+                let today = new Date();
+                let tokenaddress = access.vestingone
+                const vestingdate = moment(tokenaddress).utc().format('YYYY-MM-DD');
+                let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                // console.log(Math.floor((vestingdate - date) / (1000*60*60*24)))
+                // console.log(oneDay)
+
+                const date1 = new Date(tokenaddress);
+                const date2 = new Date(date);
+                const diffTime = Math.abs(date2 - date1);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+                // console.log(diffTime + " milliseconds");
+                return diffDays + " days until first vesting";
+                // const diffDays = Math.round(Math.abs((vestingdate - date) / oneDay));
+            })       
+            
+            
+            let vestingdate2 = tokensame.map((access) => {
+              let today = new Date();
+              let tokenaddress = access.vestingtwo
+              const vestingdate = moment(tokenaddress).utc().format('YYYY-MM-DD');
+              let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+              // console.log(Math.floor((vestingdate - date) / (1000*60*60*24)))
+              // console.log(oneDay)
+
+              const date1 = new Date(tokenaddress);
+              const date2 = new Date(date);
+              const diffTime = Math.abs(date2 - date1);
+              const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+              // console.log(diffTime + " milliseconds");
+              return diffDays + " days until second vesting";
+              // const diffDays = Math.round(Math.abs((vestingdate - date) / oneDay));
+          })    
+
+
+
+          let vestingdate3 = tokensame.map((access) => {
+            let today = new Date();
+            let tokenaddress = access.vestingthree
+            const vestingdate = moment(tokenaddress).utc().format('YYYY-MM-DD');
+            let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            // console.log(Math.floor((vestingdate - date) / (1000*60*60*24)))
+            // console.log(oneDay)
+
+            const date1 = new Date(tokenaddress);
+            const date2 = new Date(date);
+            const diffTime = Math.abs(date2 - date1);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+            // console.log(diffTime + " milliseconds");
+            return diffDays + " days until thirt vesting";
+            // const diffDays = Math.round(Math.abs((vestingdate - date) / oneDay));
+        })   
+
+
+        let vestingdate4 = tokensame.map((access) => {
+          let today = new Date();
+          let tokenaddress = access.vestingfour
+          const vestingdate = moment(tokenaddress).utc().format('YYYY-MM-DD');
+          let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+          // console.log(Math.floor((vestingdate - date) / (1000*60*60*24)))
+          // console.log(oneDay)
+
+          const date1 = new Date(tokenaddress);
+          const date2 = new Date(date);
+          const diffTime = Math.abs(date2 - date1);
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+          // console.log(diffTime + " milliseconds");
+          return diffDays + " days until fourth vesting";
+          // const diffDays = Math.round(Math.abs((vestingdate - date) / oneDay));
+      })   
+
+
+
+      let vestingdate5 = tokensame.map((access) => {
+        let today = new Date();
+        let tokenaddress = access.vestingfive
+        const vestingdate = moment(tokenaddress).utc().format('YYYY-MM-DD');
+        let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        // console.log(Math.floor((vestingdate - date) / (1000*60*60*24)))
+        // console.log(oneDay)
+
+        const date1 = new Date(tokenaddress);
+        const date2 = new Date(date);
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+        // console.log(diffTime + " milliseconds");
+        return diffDays + " days until fifth vesting";
+        // const diffDays = Math.round(Math.abs((vestingdate - date) / oneDay));
+    })   
+
+
+
+    let vestingdate6 = tokensame.map((access) => {
+      let today = new Date();
+      let tokenaddress = access.vestingsix
+      const vestingdate = moment(tokenaddress).utc().format('YYYY-MM-DD');
+      let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      // console.log(Math.floor((vestingdate - date) / (1000*60*60*24)))
+      // console.log(oneDay)
+
+      const date1 = new Date(tokenaddress);
+      const date2 = new Date(date);
+      const diffTime = Math.abs(date2 - date1);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+      // console.log(diffTime + " milliseconds");
+      return diffDays + " days until sixth vesting";
+      // const diffDays = Math.round(Math.abs((vestingdate - date) / oneDay));
+  })   
+
+
+  let vestingdate7 = tokensame.map((access) => {
+    let today = new Date();
+    let tokenaddress = access.vestingseven
+    const vestingdate = moment(tokenaddress).utc().format('YYYY-MM-DD');
+    let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    // console.log(Math.floor((vestingdate - date) / (1000*60*60*24)))
+    // console.log(oneDay)
+
+    const date1 = new Date(tokenaddress);
+    const date2 = new Date(date);
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+    // console.log(diffTime + " milliseconds");
+    return diffDays + " days until seventh vesting";
+    // const diffDays = Math.round(Math.abs((vestingdate - date) / oneDay));
+})   
+
+
+
+
+let vestingdate8 = tokensame.map((access) => {
+  let today = new Date();
+  let tokenaddress = access.vestingeight
+  const vestingdate = moment(tokenaddress).utc().format('YYYY-MM-DD');
+  let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  // console.log(Math.floor((vestingdate - date) / (1000*60*60*24)))
+  // console.log(oneDay)
+
+  const date1 = new Date(tokenaddress);
+  const date2 = new Date(date);
+  const diffTime = Math.abs(date2 - date1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+  // console.log(diffTime + " milliseconds");
+  return diffDays + " days until eight vesting";
+  // const diffDays = Math.round(Math.abs((vestingdate - date) / oneDay));
+})   
+
+
+
+
+let vestingdate9 = tokensame.map((access) => {
+  let today = new Date();
+  let tokenaddress = access.vestingnine
+  const vestingdate = moment(tokenaddress).utc().format('YYYY-MM-DD');
+  let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  // console.log(Math.floor((vestingdate - date) / (1000*60*60*24)))
+  // console.log(oneDay)
+
+  const date1 = new Date(tokenaddress);
+  const date2 = new Date(date);
+  const diffTime = Math.abs(date2 - date1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+  // console.log(diffTime + " milliseconds");
+  return diffDays + " days until ninth vesting";
+  // const diffDays = Math.round(Math.abs((vestingdate - date) / oneDay));
+})   
+
+
+
+
+let vestingdate10 = tokensame.map((access) => {
+  let today = new Date();
+  let tokenaddress = access.vestingten
+  const vestingdate = moment(tokenaddress).utc().format('YYYY-MM-DD');
+  let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  // console.log(Math.floor((vestingdate - date) / (1000*60*60*24)))
+  // console.log(oneDay)
+
+  const date1 = new Date(tokenaddress);
+  const date2 = new Date(date);
+  const diffTime = Math.abs(date2 - date1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+  // console.log(diffTime + " milliseconds");
+  return diffDays + " days until tenth vesting";
+  // const diffDays = Math.round(Math.abs((vestingdate - date) / oneDay));
+})   
+
+
+            setDate(vesting1)
+            setDate2(vestingdate2)
+            setDate3(vestingdate3)
+            setDate4(vestingdate4)
+            setDate5(vestingdate5)
+            setDate6(vestingdate6)
+            setDate7(vestingdate7)
+            setDate8(vestingdate8)
+            setDate9(vestingdate9)
+            setDate10(vestingdate10)
+    
+          }
+          testprojectdesc();
         }, []);
 
 
@@ -462,6 +682,21 @@ const [websitecheck, setWebsite] = useState(null);
 
 <h3>{websitecheck}</h3>
 
+{/*Initial Vesting Schedule function (static data)*/}
+
+<h2>Vesting Schedule</h2>
+
+<h3>{date}</h3>
+<h3>{date2}</h3>
+<h3>{date3}</h3>
+<h3>{date4}</h3>
+<h3>{date5}</h3>
+<h3>{date6}</h3>
+<h3>{date7}</h3>
+<h3>{date8}</h3>
+<h3>{date9}</h3>
+<h3>{date10}</h3>
+
         </>
 
     );
@@ -476,9 +711,10 @@ const [websitecheck, setWebsite] = useState(null);
     // console.log(findtokens)
 
 
+
     return {
         props: {
-            tokens: findtokens,
+          tokens: JSON.parse(JSON.stringify(findtokens)) ,
         }
     }
 }
