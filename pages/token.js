@@ -69,6 +69,15 @@ const [supply3, setSupply3] = useState(null);
 const [supply4, setSupply4] = useState(null);
 const [supply5, setSupply5] = useState(null);
 const [supply6, setSupply6] = useState(null);
+const [supply7, setSupply7] = useState(null);
+const [supply8, setSupply8] = useState(null);
+const [supply9, setSupply9] = useState(null);
+const [supply10, setSupply10] = useState(null);
+const [supply11, setSupply11] = useState(null);
+const [supply12, setSupply12] = useState(null);
+const [supply13, setSupply13] = useState(null);
+const [supply14, setSupply14] = useState(null);
+const [supply15, setSupply15] = useState(null);
 
 
   
@@ -628,9 +637,72 @@ let vestingdate10 = tokensame.map((access) => {
                   let tokenaddress = access.m6
                   return tokenaddress
               })
-              
+              let supplyseven = tokensame.map((access) => {
+                let tokenaddress = access.m7
+                return tokenaddress
+              })
+              let supplyeight = tokensame.map((access) => {
+                let tokenaddress = access.m8
+                return tokenaddress
+              })
+              let supplynine = tokensame.map((access) => {
+                let tokenaddress = access.m9
+                return tokenaddress
+              })
+              let supplyten = tokensame.map((access) => {
+                let tokenaddress = access.m10
+                return tokenaddress
+              })
+              let supplyeleven = tokensame.map((access) => {
+                let tokenaddress = access.m11
+                return tokenaddress
+              })
+              let supplytwelve = tokensame.map((access) => {
+                let tokenaddress = access.m12
+                return tokenaddress
+              })
+              let supplythirteen = tokensame.map((access) => {
+                let tokenaddress = access.m13
+                return tokenaddress
+              })
+              let supplyfourteen = tokensame.map((access) => {
+                let tokenaddress = access.m14
+                return tokenaddress
+              })
+              let supplyfifteen = tokensame.map((access) => {
+                let tokenaddress = access.m15
+                return tokenaddress
+              })
 
-      
+
+
+              const valuecheckseven = supplyseven.every(num => num > 0);
+              const valuecheckeight = supplyeight.every(num => num > 0);
+              const valuechecknine = supplynine.every(num => num > 0);
+              const valuecheckten = supplyten.every(num => num > 0);
+              const valuecheckeleven = supplyeleven.every(num => num > 0);
+              const valuechecktwelve = supplytwelve.every(num => num > 0);
+              const valuecheckthirteen = supplythirteen.every(num => num > 0);
+              const valuecheckfourteen = supplyfourteen.every(num => num > 0);
+              const valuecheckfifteen = supplyfifteen.every(num => num > 0);
+
+              const numberfilterone = valuecheckseven == false && valuecheckeight == false && valuechecknine == false && valuecheckten == false && valuecheckeleven == false && valuechecktwelve == false && valuecheckthirteen == false && valuecheckfourteen == false && valuecheckfifteen == false;
+              const numberfiltertwo = valuecheckseven == true && valuecheckeight == false && valuechecknine == false && valuecheckten == false && valuecheckeleven == false && valuechecktwelve == false && valuecheckthirteen == false && valuecheckfourteen == false && valuecheckfifteen == false;
+              const numberfilterthree = valuecheckseven == true && valuecheckeight == true && valuechecknine == false && valuecheckten == false && valuecheckeleven == false && valuechecktwelve == false && valuecheckthirteen == false && valuecheckfourteen == false && valuecheckfifteen == false;
+              const numberfilterfour = valuecheckseven == true && valuecheckeight == true && valuechecknine == true && valuecheckten == false && valuecheckeleven == false && valuechecktwelve == false && valuecheckthirteen == false && valuecheckfourteen == false && valuecheckfifteen == false;
+              const numberfilterfive = valuecheckseven == true && valuecheckeight == true && valuechecknine == true && valuecheckten == true && valuecheckeleven == false && valuechecktwelve == false && valuecheckthirteen == false && valuecheckfourteen == false && valuecheckfifteen == false;
+              const numberfiltersix = valuecheckseven == true && valuecheckeight == true && valuechecknine == true && valuecheckten == true && valuecheckeleven == true && valuechecktwelve == false && valuecheckthirteen == false && valuecheckfourteen == false && valuecheckfifteen == false;
+              const numberfilterseven = valuecheckseven == true && valuecheckeight == true && valuechecknine == true && valuecheckten == true && valuecheckeleven == true && valuechecktwelve == true && valuecheckthirteen == false && valuecheckfourteen == false && valuecheckfifteen == false;
+              const numberfiltereight = valuecheckseven == true && valuecheckeight == true && valuechecknine == true && valuecheckten == true && valuecheckeleven == true && valuechecktwelve == true && valuecheckthirteen == true && valuecheckfourteen == false && valuecheckfifteen == false;
+              const numberfilternine = valuecheckseven == true && valuecheckeight == true && valuechecknine == true && valuecheckten == true && valuecheckeleven == true && valuechecktwelve == true && valuecheckthirteen == true && valuecheckfourteen == true && valuecheckfifteen == false;
+              const numberfilterten = valuecheckseven == true && valuecheckeight == true && valuechecknine == true && valuecheckten == true && valuecheckeleven == true && valuechecktwelve == true && valuecheckthirteen == true && valuecheckfourteen == true && valuecheckfifteen == true;
+
+
+
+
+
+              if (numberfilterone == true) {
+
               // const y = [supplyone =+ supplytwo]
               let r0 = (100 * supplyone) / tge
       
@@ -653,20 +725,547 @@ let vestingdate10 = tokensame.map((access) => {
               let arr5 = supplyfive.push([sum4])
               let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
               let r5 = (100 * supplysix) / sum5
-              
+
               setSupply1(r0)
               setSupply2(r1)
               setSupply3(r2)
               setSupply4(r3)
               setSupply5(r4)
               setSupply6(r5)
+
+              } else if (numberfiltertwo == true) {
+
+                let r0 = (100 * supplyone) / tge
+      
+                let arr1 = tge.concat(supplyone)
+                let sum1 = arr1.flat().reduce((a, b) => a + b, 0)
+                let r1 = (100 * supplytwo) / sum1
+        
+                let arr2 = supplytwo.push([sum1])
+                let sum2 = supplytwo.flat().reduce((a, b) => a + b, 0)
+                let r2 = (100 * supplythree) / sum2
+        
+                let arr3 = supplythree.push([sum2])
+                let sum3 = supplythree.flat().reduce((a, b) => a + b, 0)
+                let r3 = (100 * supplyfour) / sum3
+        
+                let arr4 = supplyfour.push([sum3])
+                let sum4 = supplyfour.flat().reduce((a, b) => a + b, 0)
+                let r4 = (100 * supplyfive) / sum4
+        
+                let arr5 = supplyfive.push([sum4])
+                let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
+                let r5 = (100 * supplysix) / sum5
+  
+                let arr6 = supplysix.push([sum5])
+                let sum6 = supplysix.flat().reduce((a, b) => a + b, 0)
+                let r6 = (100 * supplyseven) / sum6
+                
+  
+                setSupply1(r0)
+                setSupply2(r1)
+                setSupply3(r2)
+                setSupply4(r3)
+                setSupply5(r4)
+                setSupply6(r5)
+                setSupply7(r6)
+
+
+              } else if (numberfilterthree == true) {
+
+                let r0 = (100 * supplyone) / tge
+      
+                let arr1 = tge.concat(supplyone)
+                let sum1 = arr1.flat().reduce((a, b) => a + b, 0)
+                let r1 = (100 * supplytwo) / sum1
+        
+                let arr2 = supplytwo.push([sum1])
+                let sum2 = supplytwo.flat().reduce((a, b) => a + b, 0)
+                let r2 = (100 * supplythree) / sum2
+        
+                let arr3 = supplythree.push([sum2])
+                let sum3 = supplythree.flat().reduce((a, b) => a + b, 0)
+                let r3 = (100 * supplyfour) / sum3
+        
+                let arr4 = supplyfour.push([sum3])
+                let sum4 = supplyfour.flat().reduce((a, b) => a + b, 0)
+                let r4 = (100 * supplyfive) / sum4
+        
+                let arr5 = supplyfive.push([sum4])
+                let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
+                let r5 = (100 * supplysix) / sum5
+  
+                let arr6 = supplysix.push([sum5])
+                let sum6 = supplysix.flat().reduce((a, b) => a + b, 0)
+                let r6 = (100 * supplyseven) / sum6
+  
+                let arr7 = supplyseven.push([sum6])
+                let sum7 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r7 = (100 * supplyeight) / sum7
+
+  
+                setSupply1(r0)
+                setSupply2(r1)
+                setSupply3(r2)
+                setSupply4(r3)
+                setSupply5(r4)
+                setSupply6(r5)
+                setSupply7(r6)
+                setSupply8(r7)
+
+              } else if (numberfilterfour == true) {
+
+                let r0 = (100 * supplyone) / tge
+      
+                let arr1 = tge.concat(supplyone)
+                let sum1 = arr1.flat().reduce((a, b) => a + b, 0)
+                let r1 = (100 * supplytwo) / sum1
+        
+                let arr2 = supplytwo.push([sum1])
+                let sum2 = supplytwo.flat().reduce((a, b) => a + b, 0)
+                let r2 = (100 * supplythree) / sum2
+        
+                let arr3 = supplythree.push([sum2])
+                let sum3 = supplythree.flat().reduce((a, b) => a + b, 0)
+                let r3 = (100 * supplyfour) / sum3
+        
+                let arr4 = supplyfour.push([sum3])
+                let sum4 = supplyfour.flat().reduce((a, b) => a + b, 0)
+                let r4 = (100 * supplyfive) / sum4
+        
+                let arr5 = supplyfive.push([sum4])
+                let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
+                let r5 = (100 * supplysix) / sum5
+  
+                let arr6 = supplysix.push([sum5])
+                let sum6 = supplysix.flat().reduce((a, b) => a + b, 0)
+                let r6 = (100 * supplyseven) / sum6
+  
+                let arr7 = supplyseven.push([sum6])
+                let sum7 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r7 = (100 * supplyeight) / sum7
+
+                let arr8 = supplyseven.push([sum7])
+                let sum8 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r8 = (100 * supplynine) / sum8
+
+  
+                setSupply1(r0)
+                setSupply2(r1)
+                setSupply3(r2)
+                setSupply4(r3)
+                setSupply5(r4)
+                setSupply6(r5)
+                setSupply7(r6)
+                setSupply8(r7)
+                setSupply9(r8)
+
+              } else if (numberfilterfive == true) {
+
+                let r0 = (100 * supplyone) / tge
+      
+                let arr1 = tge.concat(supplyone)
+                let sum1 = arr1.flat().reduce((a, b) => a + b, 0)
+                let r1 = (100 * supplytwo) / sum1
+        
+                let arr2 = supplytwo.push([sum1])
+                let sum2 = supplytwo.flat().reduce((a, b) => a + b, 0)
+                let r2 = (100 * supplythree) / sum2
+        
+                let arr3 = supplythree.push([sum2])
+                let sum3 = supplythree.flat().reduce((a, b) => a + b, 0)
+                let r3 = (100 * supplyfour) / sum3
+        
+                let arr4 = supplyfour.push([sum3])
+                let sum4 = supplyfour.flat().reduce((a, b) => a + b, 0)
+                let r4 = (100 * supplyfive) / sum4
+        
+                let arr5 = supplyfive.push([sum4])
+                let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
+                let r5 = (100 * supplysix) / sum5
+  
+                let arr6 = supplysix.push([sum5])
+                let sum6 = supplysix.flat().reduce((a, b) => a + b, 0)
+                let r6 = (100 * supplyseven) / sum6
+  
+                let arr7 = supplyseven.push([sum6])
+                let sum7 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r7 = (100 * supplyeight) / sum7
+
+                let arr8 = supplyseven.push([sum7])
+                let sum8 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r8 = (100 * supplynine) / sum8
+
+                let arr9 = supplyseven.push([sum8])
+                let sum9 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r9 = (100 * supplyten) / sum9
+
+  
+                setSupply1(r0)
+                setSupply2(r1)
+                setSupply3(r2)
+                setSupply4(r3)
+                setSupply5(r4)
+                setSupply6(r5)
+                setSupply7(r6)
+                setSupply8(r7)
+                setSupply9(r8)
+                setSupply10(r9)
+
+              } else if (numberfiltersix == true) {
+
+                let r0 = (100 * supplyone) / tge
+      
+                let arr1 = tge.concat(supplyone)
+                let sum1 = arr1.flat().reduce((a, b) => a + b, 0)
+                let r1 = (100 * supplytwo) / sum1
+        
+                let arr2 = supplytwo.push([sum1])
+                let sum2 = supplytwo.flat().reduce((a, b) => a + b, 0)
+                let r2 = (100 * supplythree) / sum2
+        
+                let arr3 = supplythree.push([sum2])
+                let sum3 = supplythree.flat().reduce((a, b) => a + b, 0)
+                let r3 = (100 * supplyfour) / sum3
+        
+                let arr4 = supplyfour.push([sum3])
+                let sum4 = supplyfour.flat().reduce((a, b) => a + b, 0)
+                let r4 = (100 * supplyfive) / sum4
+        
+                let arr5 = supplyfive.push([sum4])
+                let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
+                let r5 = (100 * supplysix) / sum5
+  
+                let arr6 = supplysix.push([sum5])
+                let sum6 = supplysix.flat().reduce((a, b) => a + b, 0)
+                let r6 = (100 * supplyseven) / sum6
+  
+                let arr7 = supplyseven.push([sum6])
+                let sum7 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r7 = (100 * supplyeight) / sum7
+
+                let arr8 = supplyseven.push([sum7])
+                let sum8 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r8 = (100 * supplynine) / sum8
+
+                let arr9 = supplyseven.push([sum8])
+                let sum9 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r9 = (100 * supplyten) / sum9
+
+                let arr10 = supplyseven.push([sum8])
+                let sum10 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r10 = (100 * supplyeleven) / sum10
+
+  
+                setSupply1(r0)
+                setSupply2(r1)
+                setSupply3(r2)
+                setSupply4(r3)
+                setSupply5(r4)
+                setSupply6(r5)
+                setSupply7(r6)
+                setSupply8(r7)
+                setSupply9(r8)
+                setSupply10(r9)
+                setSupply11(r10)
+
+              } else if (numberfilterseven == true) {
+
+                let r0 = (100 * supplyone) / tge
+      
+                let arr1 = tge.concat(supplyone)
+                let sum1 = arr1.flat().reduce((a, b) => a + b, 0)
+                let r1 = (100 * supplytwo) / sum1
+        
+                let arr2 = supplytwo.push([sum1])
+                let sum2 = supplytwo.flat().reduce((a, b) => a + b, 0)
+                let r2 = (100 * supplythree) / sum2
+        
+                let arr3 = supplythree.push([sum2])
+                let sum3 = supplythree.flat().reduce((a, b) => a + b, 0)
+                let r3 = (100 * supplyfour) / sum3
+        
+                let arr4 = supplyfour.push([sum3])
+                let sum4 = supplyfour.flat().reduce((a, b) => a + b, 0)
+                let r4 = (100 * supplyfive) / sum4
+        
+                let arr5 = supplyfive.push([sum4])
+                let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
+                let r5 = (100 * supplysix) / sum5
+  
+                let arr6 = supplysix.push([sum5])
+                let sum6 = supplysix.flat().reduce((a, b) => a + b, 0)
+                let r6 = (100 * supplyseven) / sum6
+  
+                let arr7 = supplyseven.push([sum6])
+                let sum7 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r7 = (100 * supplyeight) / sum7
+
+                let arr8 = supplyseven.push([sum7])
+                let sum8 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r8 = (100 * supplynine) / sum8
+
+                let arr9 = supplyseven.push([sum8])
+                let sum9 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r9 = (100 * supplyten) / sum9
+
+                let arr10 = supplyseven.push([sum9])
+                let sum10 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r10 = (100 * supplyeleven) / sum10
+
+                let arr11 = supplyseven.push([sum10])
+                let sum11 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r11 = (100 * supplytwelve) / sum11
+
+                
+
+  
+                setSupply1(r0)
+                setSupply2(r1)
+                setSupply3(r2)
+                setSupply4(r3)
+                setSupply5(r4)
+                setSupply6(r5)
+                setSupply7(r6)
+                setSupply8(r7)
+                setSupply9(r8)
+                setSupply10(r9)
+                setSupply11(r10)
+                setSupply12(r11)
+
+              } else if (numberfiltereight == true) {
+
+                let r0 = (100 * supplyone) / tge
+      
+                let arr1 = tge.concat(supplyone)
+                let sum1 = arr1.flat().reduce((a, b) => a + b, 0)
+                let r1 = (100 * supplytwo) / sum1
+        
+                let arr2 = supplytwo.push([sum1])
+                let sum2 = supplytwo.flat().reduce((a, b) => a + b, 0)
+                let r2 = (100 * supplythree) / sum2
+        
+                let arr3 = supplythree.push([sum2])
+                let sum3 = supplythree.flat().reduce((a, b) => a + b, 0)
+                let r3 = (100 * supplyfour) / sum3
+        
+                let arr4 = supplyfour.push([sum3])
+                let sum4 = supplyfour.flat().reduce((a, b) => a + b, 0)
+                let r4 = (100 * supplyfive) / sum4
+        
+                let arr5 = supplyfive.push([sum4])
+                let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
+                let r5 = (100 * supplysix) / sum5
+  
+                let arr6 = supplysix.push([sum5])
+                let sum6 = supplysix.flat().reduce((a, b) => a + b, 0)
+                let r6 = (100 * supplyseven) / sum6
+  
+                let arr7 = supplyseven.push([sum6])
+                let sum7 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r7 = (100 * supplyeight) / sum7
+
+                let arr8 = supplyseven.push([sum7])
+                let sum8 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r8 = (100 * supplynine) / sum8
+
+                let arr9 = supplyseven.push([sum8])
+                let sum9 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r9 = (100 * supplyten) / sum9
+
+                let arr10 = supplyseven.push([sum9])
+                let sum10 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r10 = (100 * supplyeleven) / sum10
+
+                let arr11 = supplyseven.push([sum10])
+                let sum11 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r11 = (100 * supplytwelve) / sum11
+
+                let arr12 = supplyseven.push([sum11])
+                let sum12 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r12 = (100 * supplythirteen) / sum12
+
+                
+
+  
+                setSupply1(r0)
+                setSupply2(r1)
+                setSupply3(r2)
+                setSupply4(r3)
+                setSupply5(r4)
+                setSupply6(r5)
+                setSupply7(r6)
+                setSupply8(r7)
+                setSupply9(r8)
+                setSupply10(r9)
+                setSupply11(r10)
+                setSupply12(r11)
+                setSupply13(r12)
+
+              } else if (numberfilternine == true) {
+
+                let r0 = (100 * supplyone) / tge
+      
+                let arr1 = tge.concat(supplyone)
+                let sum1 = arr1.flat().reduce((a, b) => a + b, 0)
+                let r1 = (100 * supplytwo) / sum1
+        
+                let arr2 = supplytwo.push([sum1])
+                let sum2 = supplytwo.flat().reduce((a, b) => a + b, 0)
+                let r2 = (100 * supplythree) / sum2
+        
+                let arr3 = supplythree.push([sum2])
+                let sum3 = supplythree.flat().reduce((a, b) => a + b, 0)
+                let r3 = (100 * supplyfour) / sum3
+        
+                let arr4 = supplyfour.push([sum3])
+                let sum4 = supplyfour.flat().reduce((a, b) => a + b, 0)
+                let r4 = (100 * supplyfive) / sum4
+        
+                let arr5 = supplyfive.push([sum4])
+                let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
+                let r5 = (100 * supplysix) / sum5
+  
+                let arr6 = supplysix.push([sum5])
+                let sum6 = supplysix.flat().reduce((a, b) => a + b, 0)
+                let r6 = (100 * supplyseven) / sum6
+  
+                let arr7 = supplyseven.push([sum6])
+                let sum7 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r7 = (100 * supplyeight) / sum7
+
+                let arr8 = supplyseven.push([sum7])
+                let sum8 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r8 = (100 * supplynine) / sum8
+
+                let arr9 = supplyseven.push([sum8])
+                let sum9 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r9 = (100 * supplyten) / sum9
+
+                let arr10 = supplyseven.push([sum9])
+                let sum10 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r10 = (100 * supplyeleven) / sum10
+
+                let arr11 = supplyseven.push([sum10])
+                let sum11 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r11 = (100 * supplytwelve) / sum11
+
+                let arr12 = supplyseven.push([sum11])
+                let sum12 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r12 = (100 * supplythirteen) / sum12
+
+                let arr13 = supplyseven.push([sum12])
+                let sum13 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r13 = (100 * supplyfourteen) / sum13
+
+                
+
+  
+                setSupply1(r0)
+                setSupply2(r1)
+                setSupply3(r2)
+                setSupply4(r3)
+                setSupply5(r4)
+                setSupply6(r5)
+                setSupply7(r6)
+                setSupply8(r7)
+                setSupply9(r8)
+                setSupply10(r9)
+                setSupply11(r10)
+                setSupply12(r11)
+                setSupply13(r12)
+                setSupply14(r13)
+
+              } else if (numberfilterten == true) {
+
+                let r0 = (100 * supplyone) / tge
+      
+                let arr1 = tge.concat(supplyone)
+                let sum1 = arr1.flat().reduce((a, b) => a + b, 0)
+                let r1 = (100 * supplytwo) / sum1
+        
+                let arr2 = supplytwo.push([sum1])
+                let sum2 = supplytwo.flat().reduce((a, b) => a + b, 0)
+                let r2 = (100 * supplythree) / sum2
+        
+                let arr3 = supplythree.push([sum2])
+                let sum3 = supplythree.flat().reduce((a, b) => a + b, 0)
+                let r3 = (100 * supplyfour) / sum3
+        
+                let arr4 = supplyfour.push([sum3])
+                let sum4 = supplyfour.flat().reduce((a, b) => a + b, 0)
+                let r4 = (100 * supplyfive) / sum4
+        
+                let arr5 = supplyfive.push([sum4])
+                let sum5 = supplyfive.flat().reduce((a, b) => a + b, 0)
+                let r5 = (100 * supplysix) / sum5
+  
+                let arr6 = supplysix.push([sum5])
+                let sum6 = supplysix.flat().reduce((a, b) => a + b, 0)
+                let r6 = (100 * supplyseven) / sum6
+  
+                let arr7 = supplyseven.push([sum6])
+                let sum7 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r7 = (100 * supplyeight) / sum7
+
+                let arr8 = supplyseven.push([sum7])
+                let sum8 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r8 = (100 * supplynine) / sum8
+
+                let arr9 = supplyseven.push([sum8])
+                let sum9 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r9 = (100 * supplyten) / sum9
+
+                let arr10 = supplyseven.push([sum9])
+                let sum10 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r10 = (100 * supplyeleven) / sum10
+
+                let arr11 = supplyseven.push([sum10])
+                let sum11 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r11 = (100 * supplytwelve) / sum11
+
+                let arr12 = supplyseven.push([sum11])
+                let sum12 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r12 = (100 * supplythirteen) / sum12
+
+                let arr13 = supplyseven.push([sum12])
+                let sum13 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r13 = (100 * supplyfourteen) / sum13
+
+                let arr14 = supplyseven.push([sum13])
+                let sum14 = supplyseven.flat().reduce((a, b) => a + b, 0)
+                let r14 = (100 * supplyfifteen) / sum14
+
+                
+
+  
+                setSupply1(r0)
+                setSupply2(r1)
+                setSupply3(r2)
+                setSupply4(r3)
+                setSupply5(r4)
+                setSupply6(r5)
+                setSupply7(r6)
+                setSupply8(r7)
+                setSupply9(r8)
+                setSupply10(r9)
+                setSupply11(r10)
+                setSupply12(r11)
+                setSupply13(r12)
+                setSupply14(r13)
+                setSupply15(r14)
+
+              } 
+
+
+
               
           }
           testunqu();
       }, []);
       
       //need to count all the values to divide to do it dynamic
-      const totalinflation = [supply1 + supply2 + supply3 + supply4 + supply5 + supply6] /6
+      // const totalinflation = [supply1 + supply2 + supply3 + supply4 + supply5 + supply6 + supply7 + supply8] /8
 
 
 
@@ -878,12 +1477,33 @@ let vestingdate10 = tokensame.map((access) => {
 <h3>{marketing}</h3>
 
 
+{/*Initial  function (static data)*/}
+
+<h2>%</h2>
+
+<h3>{supply1}</h3>
+<h3>{supply2}</h3>
+<h3>{supply3}</h3>
+<h3>{supply4}</h3>
+<h3>{supply5}</h3>
+<h3>{supply6}</h3>
+<h3>{supply7}</h3>
+<h3>{supply8}</h3>
+<h3>{supply9}</h3>
+<h3>{supply10}</h3>
+<h3>{supply11}</h3>
+<h3>{supply12}</h3>
+<h3>{supply13}</h3>
+<h3>{supply14}</h3>
+<h3>{supply15}</h3>
+
+
 
 {/*Initial Inflation % function (static data)*/}
 
-<h2>Inflation %</h2>
+{/* <h2>Inflation %</h2>
 
-<h3>{totalinflation}</h3>
+<h3>{totalinflation}</h3> */}
 
 
 
