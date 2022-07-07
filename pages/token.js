@@ -174,6 +174,8 @@ const [supply15, setSupply15] = useState(null);
         return wlunarush;
       })
 
+
+
       const result = await coinGeckoClient.coins.markets({
         ids: tokenresult,
       });
@@ -1437,6 +1439,37 @@ let vestingdate10 = tokensame.map((access) => {
             <th scope="row">
             <p>Marketcap</p>
             <li>{coin.market_cap}</li>
+            </th>
+        </tr>
+      ))}
+
+    {/*Current price function (coingecko api)*/}
+
+    {coingecko?.data.map(coin => (
+          <tr key={coin.id}>
+            <th scope="row">
+            <p>Current Price</p>
+            <li>{coin.current_price}</li>
+            </th>
+        </tr>
+      ))}
+
+    {/*Dymbol function (coingecko api)*/}
+
+    {coingecko?.data.map(coin => (
+          <tr key={coin.id}>
+            <th scope="row">
+            <li>{coin.symbol}</li>
+            </th>
+        </tr>
+      ))}
+
+      {/*Image function (coingecko api)*/}
+
+{coingecko?.data.map(coin => (
+          <tr key={coin.id}>
+            <th scope="row">
+            <img src={coin.image} alt={coin.name} />
             </th>
         </tr>
       ))}
