@@ -1257,6 +1257,10 @@ let vestingdate10 = tokensame.map((access) => {
 
               } 
 
+            
+            // if (numberfilterone == true) {
+            // const totalinflation = [supply1 + supply2 + supply3 + supply4 + supply5 + supply6] / 6
+            // }
 
 
               
@@ -1264,11 +1268,34 @@ let vestingdate10 = tokensame.map((access) => {
           testunqu();
       }, []);
       
-      //need to count all the values to divide to do it dynamic
-      // const totalinflation = [supply1 + supply2 + supply3 + supply4 + supply5 + supply6 + supply7 + supply8] /8
+
+        const supplyarray = [supply1, supply2, supply3, supply4, supply5, supply6, supply7, supply8, supply9, supply10, supply11, supply12, supply13, supply14, supply15]
+        const tokeninflationresult = []
+
+        // const tokeninflation = supplyarray.filter(item => {
+        //   let pushnotnullitems = null;
+        //   let pushtoarray = tokeninflationresult.push(pushnotnullitems)
+        //   return pushtoarray
+        // })
+
+      const mapsupplyarray = supplyarray.map((i) => {
+        if (i != null) {
+          return tokeninflationresult.push(i)
+        } else {
+          return " "
+        }
+      })
+
+      const tokeninflationsum = tokeninflationresult.reduce((partialSum, a) => partialSum + a, 0);
+
+      const tokeninflation = tokeninflationsum / tokeninflationresult.length;
 
 
 
+
+
+        
+        
 
 
     //Balance action 
@@ -1499,11 +1526,11 @@ let vestingdate10 = tokensame.map((access) => {
 
 
 
-{/*Initial Inflation % function (static data)*/}
+{/* Initial Inflation % function (static data)*/}
 
-{/* <h2>Inflation %</h2>
+<h2>Inflation </h2>
 
-<h3>{totalinflation}</h3> */}
+<h3>{tokeninflation + " %"}</h3>
 
 
 
