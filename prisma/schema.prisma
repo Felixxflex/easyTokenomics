@@ -25,6 +25,18 @@ model easytokens {
   websitelink String @db.VarChar(255)
   verifiedblock Boolean @default(false) 
   verifiedteam Boolean @default(false)
+  januar Boolean @default(false)
+  febuar Boolean @default(false)
+  marz Boolean @default(false)
+  abrel Boolean @default(false)
+  mee Boolean @default(false)
+  juni Boolean @default(false)
+  juli Boolean @default(false)
+  august Boolean @default(false)
+  september Boolean @default(false)
+  october Boolean @default(false)
+  november Boolean @default(false)
+  dezenber Boolean @default(false)
   vestingone DateTime @db.Date
   vestingtwo DateTime @db.Date
   vestingthree DateTime @db.Date

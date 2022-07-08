@@ -1539,7 +1539,7 @@ let vestingdate10 = tokensame.map((access) => {
 
 {/*Initial  function (static data)*/}
 
-<h2>%</h2>
+{/* <h2>%</h2>
 
 <h3>{supply1}</h3>
 <h3>{supply2}</h3>
@@ -1555,7 +1555,7 @@ let vestingdate10 = tokensame.map((access) => {
 <h3>{supply12}</h3>
 <h3>{supply13}</h3>
 <h3>{supply14}</h3>
-<h3>{supply15}</h3>
+<h3>{supply15}</h3> */}
 
 
 

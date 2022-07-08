@@ -1,16 +1,15 @@
 
-html,
+ /* html,
 body {
   height: 100%;
   min-height: 100%;
+} */
+
+html, body {
+  background-color: gray !important;
 }
 
-body {
-  margin: 0;
-  background-color: #ffd8d8 !important;
-}
-
-.tb {
+/* .tb {
   display: table;
   width: 100%;
 }
@@ -151,10 +150,13 @@ button span:after {
   right: -6px;
   width: 40px;
   background-color: #fff;
-}
+}  */
 
 .searchh1 {
     display: flex;
     justify-content: center;
     margin-top: 15%;
-}
+} 
+
+
+
