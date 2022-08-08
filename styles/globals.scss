@@ -1,0 +1,46 @@
+//button signup/in seperation
+.btn:not([class^=btn-outline-]):not([class*=" btn-outline-"]):not(.btn-secondary):not(.btn-light):not(.btn-link) {
+    margin-left: 2%;
+    --si-btn-color: #fff;
+}
+
+//white Title
+@media (min-width: 500px) {
+    .pb-sm-3 {
+        padding-bottom: 1rem !important;
+        color: whitesmoke;
+    }
+}
+
+//chart background
+.dark-mode .bg-secondary,
+.dark-mode .card.bg-light {
+    background-color: var(--si-heading-color) !important;
+}
+
+//coin names on landing chart
+body .dark-mode span {
+    color: black !important;
+}
+
+//search button
+#searchcrypto {
+    margin-left: 3% !important;
+    border-radius: 0.3rem !important;
+}
+
+//Read More buttons
+#cryptobutton {
+    background-color: black;
+    color: whitesmoke;
+}
+
+//Newslettersection landing
+#newslettersection {
+    margin-top: 5%;
+}
+
+//Newsletter header
+#newsletterheader {
+    color: whitesmoke !important;
+}
